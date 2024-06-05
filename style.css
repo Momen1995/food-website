@@ -40,5 +40,23 @@ body{
   font-weight: 700;
 }
 
+.learn-more{
+  font-family: "Amatic SC", sans-serif;
+  font-size: 3.4rem;
+}
+
+.btns{
+  background-color: rgba(255,255,255,0.4);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  padding: 10px 24px;
+  display: inline-block;
+  border-radius: 3px;
+}
+
+.btns:hover{
+  background-color: #eaeaea;
+  color: black;
+}
 
 
