@@ -11,7 +11,10 @@ font-family: "Amatic SC", sans-serif;
   --btn-hover-bg : #e22828;
   --btn-color-primary : #fff;
   --bg-primary : #f2f2f2;
-  --color-primary : #ac2828;
+  --bg-secondary : #ffffff;
+  --color-primary : #b91818;
+  --color-secondary--darker : #888282;
+  --color-tertiary-darker : #880f0f;
 }
 
 ::-webkit-scrollbar{
@@ -19,7 +22,7 @@ font-family: "Amatic SC", sans-serif;
 }
 
 ::-webkit-scrollbar-track{
-  background-color: blanchedalmond;
+  background-color: rgb(221, 197, 162);
 }
 
 ::-webkit-scrollbar-thumb {
@@ -155,15 +158,15 @@ h1 {
 
 @keyframes bannerImgAnimation {
   0% {
-   transform: translateY(2rem);
+   transform: translateY(1.4rem);
   }
 
   50% {
-  transform: translateY(-4rem);
+  transform: translateY(-2.8rem);
   }
 
   100% {
-    transform: translateY(2rem);
+    transform: translateY(1.4rem);
   }
 }
 
@@ -177,6 +180,90 @@ h1 {
   display: flex;
   align-items: center;
   gap: .3rem;
+}
+
+/* main */
+
+#about{
+  background-color: var(--bg-secondary);
+}
+
+.section {
+  padding: 10rem 13rem;
+  border-top: 1px solid #ddd;
+  transition: transform 2s, opacity 2s;
+}
+
+.section--hidden {
+  opacity: 0;
+  transform: translateY(20rem);
+}
+
+.section-title {
+  max-width: 80%;
+  margin: 0 auto 8rem auto
+}
+
+.section-description {
+  font-size: 2.4rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  color: var(--color-primary);
+  margin-bottom: 1rem;
+  font-family: "Amatic SC", sans-serif;
+
+}
+
+.section-header {
+  font-size: 3rem;
+  line-height: 1.2;
+  font-weight: 500;
+  
+}
+
+/* feature */
+.first-feature, .mission{
+  display: flex;
+  gap: 4rem;
+  margin: 7rem 0;
+
+}
+
+.left-feature,.right-mission,.left-experience{
+  width: 50%;
+}
+
+.left-feature img,.right-mission img, .left-experience img{
+  width: 100%;
+}
+
+.right-feature,.left-mission,.right-experience{
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+
+h3{
+  color: var(--color-tertiary-darker);
+  font-size: 2.8rem;
+  font-weight: 800;
+  font-family: "Amatic SC", sans-serif;
+}
+
+p{
+  font-size: 1.4rem;
+  text-align: justify;
+  color: #443d3d;
+}
+
+svg{
+  height: 3rem;
+  width: 3rem;
+  fill: var(--color-tertiary-darker);
+  background-color: var(--color-primary);
+  border-radius: 100%;
+  padding: 5px;
 }
 
 
