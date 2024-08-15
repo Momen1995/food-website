@@ -63,12 +63,17 @@ html {
   background-color: var(--btn-hover-bg);
 }
 
+header{
+  width: 100%;
+  height: 100vh;
+}
+
 .dot{
   color: var(--btn-bg);
 }
 
 nav{
-  width: 85%;
+  width: 80%;
   margin: 0 auto;
   display: flex;
   justify-content: space-between;
@@ -115,6 +120,63 @@ nav{
     transform: translateY(0);
     opacity: 1;
   }
+}
+
+/* banner-section */
+.header-title{
+  width: 100%;
+  margin: 2.3rem auto 0;
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+  justify-content: center;
+}
+
+h1 {
+  font-size: 6rem;
+  line-height: 1.25;
+  font-family: "Amatic SC", sans-serif;
+  margin-bottom: .5rem;
+}
+
+.header-left p{
+  font-size: 1.6rem;
+  margin-bottom: 2rem;
+}
+
+.header-right img{
+  width: 100%;
+  height: auto;
+  animation-name: bannerImgAnimation;
+  animation-duration: 7s;
+  animation-iteration-count: infinite; 
+  animation-fill-mode: both;
+}
+
+@keyframes bannerImgAnimation {
+  0% {
+   transform: translateY(2rem);
+  }
+
+  50% {
+  transform: translateY(-4rem);
+  }
+
+  100% {
+    transform: translateY(2rem);
+  }
+}
+
+.banner-btn{
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.btn-right{
+  display: flex;
+  align-items: center;
+  gap: .3rem;
 }
 
 
