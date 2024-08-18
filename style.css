@@ -95,7 +95,7 @@ nav{
   top: 0;
   right: 0;
   z-index: 120;
-  background-color: rgba(228, 219, 219, 0.75);
+  background-color: rgba(243, 235, 235, 0.75);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
 }
@@ -204,14 +204,14 @@ h1 {
 }
 
 .section {
-  padding: 10rem 13rem;
+  padding: 13rem 13rem;
   border-top: 1px solid #ddd;
   transition: transform 2s, opacity 2s;
 }
 
-.section--hidden {
+.section-hidden {
   opacity: 0;
-  transform: translateY(20rem);
+  transform: translateY(10rem);
 }
 
 .section-title {

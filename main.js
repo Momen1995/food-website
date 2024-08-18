@@ -2,6 +2,7 @@
 
 const header = document.querySelector("header");
 const nav = document.querySelector(".navs");
+const allSections = document.querySelector(".section");
 
 //nav height find
 const navHeight = nav.getBoundingClientRect().height;
@@ -21,3 +22,19 @@ const headerObserver = new IntersectionObserver(sticky, {
 });
 
 headerObserver.observe(header);
+
+//section reveal
+function revealSection(entries){
+  const [entry] = entries;
+  console.log(entry)
+
+  if(entry.isIntersecting) entry.target.classList.remove("section-hidden");
+}
+const sectionObserver = new IntersectionObserver(revealSection,{
+  root: null,
+  threshold : 0.2,
+})
+
+ sectionObserver.observe(allSections)
+
+
