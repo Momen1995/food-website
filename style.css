@@ -281,5 +281,69 @@ svg{
   padding: 7px;
 }
 
+.modal{
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  max-width: 60rem;
+  background-color: #f3f3f3;
+  padding: 5rem 6rem;
+  box-shadow: 0 4rem 6rem rgba(0, 0, 0, 0.3);
+  border-radius: 10px;
+  z-index: 1000;
+  transition: all 0.5s;
+}
+
+.btn-close-modal {
+  font-family: inherit;
+  color: inherit;
+  position: absolute;
+  top: 0.5rem;
+  right: 2rem;
+  font-size: 4rem;
+  cursor: pointer;
+  border: none;
+  background: none;
+}
+
+.modal-header{
+  font-size: 2.2rem;
+  font-weight: 600;
+  line-height: 1.5;
+}
+
+.modal-form{
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.modal-form label {
+  font-size: 1.7rem;
+  font-weight: 500;
+}
+
+.modal-form input {
+  font-size: 1.7rem;
+  padding: 1rem 1.5rem;
+  border: 1px solid #ddd;
+  border-radius: 0.5rem;
+  transition: all 0.3s;
+}
+
+.modal-form input:focus {
+  outline: none;
+  border-color: var(--color-tertiary-darker);
+}
+
+.hidden{
+  visibility: hidden;
+  opacity: 0;
+}
+
+
+
 
 
