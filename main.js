@@ -7,6 +7,7 @@ const modal = document.querySelector(".modal");
 const allBtn = document.querySelectorAll(".btn");
 const closBtn = document.querySelector(".btn-close-modal");
 const overlay = document.querySelector(".overlay");
+const navItemContainer = document.querySelector(".nav-items");
 
 //nav height find
 const navHeight = nav.getBoundingClientRect().height;
@@ -62,3 +63,13 @@ document.addEventListener("keydown", function (e) {
     closeModal();
   }
 });
+
+//scroll behavior
+navItemContainer.addEventListener("click",function(e){
+  e.preventDefault()
+
+  if(e.target.classList.contains("nav-link")){
+    const attr = e.target.getAttribute("href");
+    document.querySelector(attr).scrollIntoView({behavior : "smooth"})
+  }
+})
