@@ -8,6 +8,7 @@ const allBtn = document.querySelectorAll(".btn");
 const closBtn = document.querySelector(".btn-close-modal");
 const overlay = document.querySelector(".overlay");
 const navItemContainer = document.querySelector(".nav-items");
+const toogleBtn = document.querySelector(".nav-toggle");
 
 //nav height find
 const navHeight = nav.getBoundingClientRect().height;
@@ -72,4 +73,20 @@ navItemContainer.addEventListener("click",function(e){
     const attr = e.target.getAttribute("href");
     document.querySelector(attr).scrollIntoView({behavior : "smooth"})
   }
+})
+
+//nav-toogle
+toogleBtn.addEventListener("click",function(){
+  if(navItemContainer.classList.contains("nav-open")){
+    navItemContainer.classList.remove("nav-open");
+     document.querySelector("html").style.overflow = "visible";
+  }else{
+    navItemContainer.classList.add("nav-open")
+    document.querySelector("html").style.overflow = "hidden"
+  }
+})
+
+navItemContainer.addEventListener("click",function(){
+  navItemContainer.classList.contains("nav-open") && navItemContainer.classList.remove("nav-open");
+  document.querySelector("html").style.overflow = "visible";
 })
