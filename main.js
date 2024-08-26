@@ -9,6 +9,11 @@ const closBtn = document.querySelector(".btn-close-modal");
 const overlay = document.querySelector(".overlay");
 const navItemContainer = document.querySelector(".nav-items");
 const toogleBtn = document.querySelector(".nav-toggle");
+const slides = document.querySelectorAll(".slide");
+const slider = document.querySelector(".slider");
+const btnLeft = document.querySelector(".slider__btn--left");
+const btnRight = document.querySelector(".slider__btn--right");
+const dotContainer = document.querySelector(".dots");
 
 //nav height find
 const navHeight = nav.getBoundingClientRect().height;
@@ -90,3 +95,33 @@ navItemContainer.addEventListener("click",function(){
   navItemContainer.classList.contains("nav-open") && navItemContainer.classList.remove("nav-open");
   document.querySelector("html").style.overflow = "visible";
 })
+
+//slides
+let currentSlide = 0;
+let maxSlide = slides.length - 1;
+
+function slideChange(cs){
+  slides.forEach((sl,i) =>{
+    sl.style.transform = `translateX(${100 * (i - cs)}%)`;
+  })
+}
+
+slideChange(0)
+
+
+function preSlide(){
+  if(currentSlide === 0) currentSlide = maxSlide;
+  else currentSlide--;
+  slideChange(currentSlide)
+}
+
+function nextSlide(){
+  if(currentSlide === maxSlide) currentSlide = 0;
+  else currentSlide++;
+  slideChange(currentSlide)
+}
+
+btnLeft.addEventListener("click",preSlide);
+btnRight.addEventListener("click",nextSlide)
+
+

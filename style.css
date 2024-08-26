@@ -254,7 +254,7 @@ h1 {
 }
 
 .section {
-  padding: 12rem 13rem;
+  padding: 12rem 13rem 5rem;
   border-top: 1px solid #ddd;
   transition: transform 2s, opacity 2s;
 }
@@ -338,7 +338,7 @@ svg {
 /* Slider */
 .slider {
   max-width: 100rem;
-  height: 50rem;
+  height: 38rem;
   margin: 0 auto;
   position: relative;
   overflow: hidden;
@@ -348,10 +348,11 @@ svg {
   position: absolute;
   top: 0;
   width: 100%;
-  height: 25rem;
+  height: 30rem;
   display: flex;
   justify-content: center;
   transition: transform 1s;
+  border-radius: 10px;
 }
 
 .testimonial {
@@ -360,6 +361,7 @@ svg {
   background-color: #fff;
   padding: 2rem;
   border-radius: 3px;
+  box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.05);
 }
 
 .testimonial-text {
@@ -434,6 +436,15 @@ address > img {
   margin-right: 1.75rem;
   cursor: pointer;
   transition: all 0.5s;
+}
+
+.dots__dot:last-child {
+  margin: 0;
+}
+
+.dots__dot--active {
+  background-color: #888;
+  opacity: 1;
 }
 
 /* cards */
