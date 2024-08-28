@@ -2,7 +2,7 @@
 
 const header = document.querySelector("header");
 const nav = document.querySelector(".navs");
-const allSections = document.querySelector(".section");
+const allSections = document.querySelectorAll(".section");
 const modal = document.querySelector(".modal");
 const allBtn = document.querySelectorAll(".btn");
 const closBtn = document.querySelector(".btn-close-modal");
@@ -42,10 +42,12 @@ function revealSection(entries) {
 
 const sectionObserver = new IntersectionObserver(revealSection, {
   root: null,
-  threshold: 0.2,
+  threshold: 0,
+  rootMargin : "50px",
 });
 
-sectionObserver.observe(allSections);
+// sectionObserver.observe(allSections);
+allSections.forEach(section => sectionObserver.observe(section))
 
 //modal
 function openModal() {
