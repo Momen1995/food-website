@@ -339,7 +339,7 @@ svg {
 /* Slider */
 .slider {
   max-width: 100rem;
-  height: 38rem;
+  height: 26rem;
   margin: 0 auto;
   position: relative;
   overflow: hidden;
@@ -359,7 +359,7 @@ svg {
   width: 60%;
   position: relative;
   background-color: #fff;
-  padding: 3.2rem;
+  padding: 3.5rem;
   border-radius: 3px;
   box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.05);
   border-radius: 10px;
@@ -397,16 +397,15 @@ svg {
 
 .slider__btn {
   position: absolute;
-  top: 30%;
+  top: 45%;
   z-index: 10;
   border: none;
   background: rgba(255, 255, 255, 0.7);
   font-family: inherit;
   color: #333;
-  border-radius: 50%;
-  height: 5rem;
-  width: 5rem;
-  font-size: 2.8rem;
+  border-radius: 100%;
+  padding: .6rem 1rem ;
+  font-size: 2.5rem;
   cursor: pointer;
 }
 
@@ -439,6 +438,7 @@ svg {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  border-radius: 3px;
 }
 
 .gallery-1 {

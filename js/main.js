@@ -1,5 +1,7 @@
 "use-strict";
+import foodItems from "./data.js";
 
+console.log(foodItems);
 const header = document.querySelector("header");
 const nav = document.querySelector(".navs");
 const allSections = document.querySelectorAll(".section");
