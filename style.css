@@ -336,6 +336,85 @@ svg {
   padding: 7px;
 }
 
+/* menu section */
+.menu-tab-container{
+  margin-top: 4rem;
+  display: flex;
+  gap: 3rem;
+  justify-content: center;
+}
+
+.menu-btn{
+  border-bottom: 1px solid crimson;
+  padding: .2rem 0;
+  font-size: 2.4rem;
+  font-family: "Amatic SC", sans-serif;
+  font-weight: 500;
+}
+
+.menu-cards{
+  margin: 5rem 0 0;
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+  gap: 1.4rem;
+  justify-content: center;
+}
+
+.menu-card{
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0.9px 0.9px 0.4px -6px rgba(0, 0, 0, 0.005),
+    1.6px 1.6px 1.1px -6px rgba(0, 0, 0, 0.011),
+    2.2px 2.2px 2px -6px rgba(0, 0, 0, 0.02),
+    2.7px 2.7px 3.6px -6px rgba(0, 0, 0, 0.03),
+    3.4px 3.4px 6.6px -6px rgba(0, 0, 0, 0.044),
+    6px 6px 16px -6px rgba(0, 0, 0, 0.07);
+  overflow: hidden;
+}
+
+.menu-card > img {
+  width: 100%;
+  object-fit: cover;
+}
+
+.menu-text-container{
+  padding: 1.2rem;
+}
+
+.menu-text{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: .5rem;
+}
+
+.menu-text > h3{
+  font-size: 3rem;
+  font-weight: bold;
+  color:#333;
+}
+.menu-text > p{
+  font-size: 2rem;
+  font-weight: 500;
+  color: #cf1515;
+}
+
+.menu-text-container > p{
+  font-size: 1.4rem;
+  font-weight: 400;
+  color: #666;
+  margin-bottom: 1.4rem;
+}
+.menu-text-container > button{
+  background-color: crimson;
+  display: inline-block;
+  padding: 8px 18px;
+  font-size: 1.5rem;
+  font-weight: 600;
+  border-radius: 4px;
+  color: #fff;
+}
+
 /* Slider */
 .slider {
   max-width: 100rem;

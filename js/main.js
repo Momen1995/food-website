@@ -15,7 +15,7 @@ const slides = document.querySelectorAll(".slide");
 const slider = document.querySelector(".slider");
 const btnLeft = document.querySelector(".slider__btn--left");
 const btnRight = document.querySelector(".slider__btn--right");
-const dotContainer = document.querySelector(".dots");
+const menuTabContainer = document.querySelector(".menu-tab-container");
 
 //nav height find
 const navHeight = nav.getBoundingClientRect().height;
@@ -127,5 +127,12 @@ function nextSlide(){
 
 btnLeft.addEventListener("click",preSlide);
 btnRight.addEventListener("click",nextSlide)
+
+//menu
+menuTabContainer.addEventListener("click",function(e){
+  const btn = e.target.closest(".menu-btn");
+
+  if(!btn) return;
+})
 
 
