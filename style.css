@@ -337,15 +337,33 @@ svg {
 }
 
 /* menu section */
+.menu-container {
+  display: flex;
+  justify-content: space-between;
+  gap: 0.1rem;
+}
+
 .left-side-menu {
   margin-top: 6rem;
+  width: 80%;
+}
+
+.right-side-menu {
+  margin-top: 6rem;
+  background-color: white;
+  padding: 0.7rem;
+  width: 20%;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  border-radius: 5px;
 }
 
 .menu-card {
   display: flex;
   flex-wrap: wrap;
   gap: 20px;
-  justify-content: center;
+  justify-content: justify-between;
 }
 
 .menu-cards {
@@ -363,28 +381,29 @@ svg {
 
 .menu-cards img {
   width: 100%;
-  height: 200px;
+  height: 170px;
 }
 
 .card-content {
-  padding: 18px;
+  padding: 15px;
   text-align: center;
 }
 
 .menu-cards h3 {
-  font-size: 1.25rem;
+  font-size: 2.3rem;
   margin-bottom: 10px;
-  color: #292828;
+  color: #0c0b0b;
+  font-weight: 800;
 }
 
 .menu-cards p {
   color: #4b4848;
   margin-bottom: 10px;
-  font-size: 1.5rem;
+  font-size: 1.4rem;
 }
 
 .menu-cards .rating {
-  font-size: 1.3rem;
+  font-size: 1.4rem;
   color: #f39c12;
   margin-bottom: 10px;
 }
@@ -402,10 +421,10 @@ svg {
 .menu-btn {
   display: inline-block;
   padding: 10px 20px;
-  background-color: #3498db;
+  background-color: #e73636;
   color: white;
   font-family: "Amatic SC", sans-serif;
-  font-size: 1.4rem;
+  font-size: 1.5rem;
   border: none;
   border-radius: 5px;
   cursor: pointer;
@@ -413,7 +432,7 @@ svg {
 }
 
 .menu-btn:hover {
-  background-color: #2980b9;
+  background-color: #a50b0b;
   transform: rotate(4deg);
 }
 
