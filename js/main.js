@@ -15,7 +15,7 @@ const slides = document.querySelectorAll(".slide");
 const slider = document.querySelector(".slider");
 const btnLeft = document.querySelector(".slider__btn--left");
 const btnRight = document.querySelector(".slider__btn--right");
-const menuTabContainer = document.querySelector(".menu-tab-container");
+const menuCard = document.querySelector(".menu-card");
 
 //nav height find
 const navHeight = nav.getBoundingClientRect().height;
@@ -45,11 +45,11 @@ function revealSection(entries) {
 const sectionObserver = new IntersectionObserver(revealSection, {
   root: null,
   threshold: 0,
-  rootMargin : "50px",
+  rootMargin: "50px",
 });
 
 // sectionObserver.observe(allSections);
-allSections.forEach(section => sectionObserver.observe(section))
+allSections.forEach((section) => sectionObserver.observe(section));
 
 //modal
 function openModal() {
@@ -75,64 +75,77 @@ document.addEventListener("keydown", function (e) {
 });
 
 //scroll behavior
-navItemContainer.addEventListener("click",function(e){
-  e.preventDefault()
+navItemContainer.addEventListener("click", function (e) {
+  e.preventDefault();
 
-  if(e.target.classList.contains("nav-link")){
+  if (e.target.classList.contains("nav-link")) {
     const attr = e.target.getAttribute("href");
-    document.querySelector(attr).scrollIntoView({behavior : "smooth"})
+    document.querySelector(attr).scrollIntoView({ behavior: "smooth" });
   }
-})
+});
 
 //nav-toogle
-toogleBtn.addEventListener("click",function(){
-  if(navItemContainer.classList.contains("nav-open")){
+toogleBtn.addEventListener("click", function () {
+  if (navItemContainer.classList.contains("nav-open")) {
     navItemContainer.classList.remove("nav-open");
-     document.querySelector("html").style.overflow = "visible";
-  }else{
-    navItemContainer.classList.add("nav-open")
-    document.querySelector("html").style.overflow = "hidden"
+    document.querySelector("html").style.overflow = "visible";
+  } else {
+    navItemContainer.classList.add("nav-open");
+    document.querySelector("html").style.overflow = "hidden";
   }
-})
+});
 
-navItemContainer.addEventListener("click",function(){
-  navItemContainer.classList.contains("nav-open") && navItemContainer.classList.remove("nav-open");
+navItemContainer.addEventListener("click", function () {
+  navItemContainer.classList.contains("nav-open") &&
+    navItemContainer.classList.remove("nav-open");
   document.querySelector("html").style.overflow = "visible";
-})
+});
 
 //slides
 let currentSlide = 0;
 let maxSlide = slides.length - 1;
 
-function slideChange(cs){
-  slides.forEach((sl,i) =>{
+function slideChange(cs) {
+  slides.forEach((sl, i) => {
     sl.style.transform = `translateX(${100 * (i - cs)}%)`;
-  })
+  });
 }
 
-slideChange(0)
+slideChange(0);
 
-
-function preSlide(){
-  if(currentSlide === 0) currentSlide = maxSlide;
+function preSlide() {
+  if (currentSlide === 0) currentSlide = maxSlide;
   else currentSlide--;
-  slideChange(currentSlide)
+  slideChange(currentSlide);
 }
 
-function nextSlide(){
-  if(currentSlide === maxSlide) currentSlide = 0;
+function nextSlide() {
+  if (currentSlide === maxSlide) currentSlide = 0;
   else currentSlide++;
-  slideChange(currentSlide)
+  slideChange(currentSlide);
 }
 
-btnLeft.addEventListener("click",preSlide);
-btnRight.addEventListener("click",nextSlide)
+btnLeft.addEventListener("click", preSlide);
+btnRight.addEventListener("click", nextSlide);
 
 //menu
-menuTabContainer.addEventListener("click",function(e){
-  const btn = e.target.closest(".menu-btn");
+foodItems.forEach((food) => {
+  const html = `
+    <div class="menu-cards">
+      <div class="image-container">
+      <img src=${food.image} alt=${food.name}>
+      </div>
+      <div class="card-content">
+        <h3>${food.name}</h3>
+        <p>${food.description}</p>
+        <div class="card-content-detail">
+          <p><strong>Price: $${food.price}</strong></p>
+          <div class="rating">⭐ ${food.rating} (${food.reviews} reviews)</div>
+        </div>
+        <button data-id=${food.id} class="menu-btn">Order Now</button>
+      </div>
+    </div>
+   `;
 
-  if(!btn) return;
-})
-
-
+  menuCard.insertAdjacentHTML("afterbegin", html);
+});
