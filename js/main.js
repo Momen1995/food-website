@@ -16,8 +16,6 @@ const slider = document.querySelector(".slider");
 const btnLeft = document.querySelector(".slider__btn--left");
 const btnRight = document.querySelector(".slider__btn--right");
 const menuCard = document.querySelector(".menu-card");
-const discount = document.querySelector(".discount");
-const totalCost = document.querySelector(".total-cost");
 const menuBtn = document.querySelector(".menu-btn");
 
 //nav height find
@@ -142,7 +140,7 @@ foodItems.forEach((food) => {
         <h3 class="food-name">${food.name}</h3>
         <p>${food.description}</p>
         <div class="card-content-detail">
-          <p>Price: <span class="price">${food.price}</span></p>
+          <p>Price: <span class="price">${food.price}</span>TK</p>
           <div class="rating">⭐ ${food.rating} (${food.reviews} reviews)</div>
         </div>
         <button data-id=${food.id} class="menu-btn">Order Now</button>
@@ -166,11 +164,10 @@ menuCard.addEventListener("click", function (e) {
 
     const priceOfFood = Number(price.textContent);
     foodPrice += priceOfFood;
-    console.log(foodPrice);
 
     if (foodPrice >= 0) {
       let convertNumberTotalPrice = Number(totalPrice.textContent);
-      console.log(convertNumberTotalPrice);
+
       // item add
       const unorderList = document.querySelector(".unorder-list");
       const ul = document.createElement("ul");
@@ -186,6 +183,30 @@ menuCard.addEventListener("click", function (e) {
       //money add
       convertNumberTotalPrice += priceOfFood;
       totalPrice.textContent = convertNumberTotalPrice.toFixed(2);
+
+      //discount add
+      if (convertNumberTotalPrice >= 700) {
+        const textInputs = document.querySelector(".text-inputs");
+        const discountElement = document.querySelector(".discount");
+        let convertNumDiscount = Number(discountElement.textContent);
+        const applyBtn = document.querySelector(".apply-btn");
+        applyBtn.removeAttribute("disabled");
+
+        applyBtn.addEventListener("click", () => {
+          if (textInputs.value === "BUY700") {
+            convertNumDiscount = (convertNumberTotalPrice * 10) / 100;
+            discountElement.textContent = convertNumDiscount.toFixed(2);
+
+            // final total with discount
+            const totalCostElement = document.querySelector(".total-cost");
+            const totalAfterDiscount =
+              convertNumberTotalPrice - convertNumDiscount;
+            totalCostElement.textContent = totalAfterDiscount.toFixed(2);
+          } else {
+            alert("Invalid discount code");
+          }
+        });
+      }
     }
   }
 });
