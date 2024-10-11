@@ -16,7 +16,6 @@ const slider = document.querySelector(".slider");
 const btnLeft = document.querySelector(".slider__btn--left");
 const btnRight = document.querySelector(".slider__btn--right");
 const menuCard = document.querySelector(".menu-card");
-let totalPrice = document.querySelector(".total-price");
 const discount = document.querySelector(".discount");
 const totalCost = document.querySelector(".total-cost");
 const menuBtn = document.querySelector(".menu-btn");
@@ -161,17 +160,18 @@ let foodPrice = 0;
 menuCard.addEventListener("click", function (e) {
   if (e.target.matches(".menu-btn")) {
     const card = e.target.closest(".menu-cards");
-    const dataId = e.target.getAttribute("data-id");
     const price = card.querySelector(".price");
     const foodName = card.querySelector(".food-name").textContent;
-    console.log(foodName);
+    const totalPrice = document.querySelector(".total-price");
 
     const priceOfFood = Number(price.textContent);
     foodPrice += priceOfFood;
     console.log(foodPrice);
 
-    let numTotalPrice = Number(totalPrice.textContent);
     if (foodPrice >= 0) {
+      let convertNumberTotalPrice = Number(totalPrice.textContent);
+      console.log(convertNumberTotalPrice);
+      // item add
       const unorderList = document.querySelector(".unorder-list");
       const ul = document.createElement("ul");
       const li = document.createElement("li");
@@ -179,7 +179,13 @@ menuCard.addEventListener("click", function (e) {
       ul.append(li);
       unorderList.append(ul);
 
-      numTotalPrice += foodPrice;
+      //remove disabled from purchase btn
+      const makePurchase = document.querySelector(".make-purchase");
+      makePurchase.removeAttribute("disabled");
+
+      //money add
+      convertNumberTotalPrice += priceOfFood;
+      totalPrice.textContent = convertNumberTotalPrice.toFixed(2);
     }
   }
 });
