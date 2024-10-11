@@ -16,6 +16,10 @@ const slider = document.querySelector(".slider");
 const btnLeft = document.querySelector(".slider__btn--left");
 const btnRight = document.querySelector(".slider__btn--right");
 const menuCard = document.querySelector(".menu-card");
+const totalPrice = document.querySelector(".total-price");
+const discount = document.querySelector(".discount");
+const totalCost = document.querySelector(".total-cost");
+const menuBtn = document.querySelector(".menu-btn");
 
 //nav height find
 const navHeight = nav.getBoundingClientRect().height;
@@ -136,10 +140,10 @@ foodItems.forEach((food) => {
       <img src=${food.image} alt=${food.name}>
       </div>
       <div class="card-content">
-        <h3>${food.name}</h3>
+        <h3 class="food-name">${food.name}</h3>
         <p>${food.description}</p>
         <div class="card-content-detail">
-          <p><strong>Price: $${food.price}</strong></p>
+          <p>Price: <span class="price">${food.price}</span></p>
           <div class="rating">⭐ ${food.rating} (${food.reviews} reviews)</div>
         </div>
         <button data-id=${food.id} class="menu-btn">Order Now</button>
@@ -148,4 +152,21 @@ foodItems.forEach((food) => {
    `;
 
   menuCard.insertAdjacentHTML("afterbegin", html);
+});
+
+//discount calculate
+
+let foodPrice = 0;
+
+menuCard.addEventListener("click", function (e) {
+  if (e.target.matches(".menu-btn")) {
+    const card = e.target.closest(".menu-cards");
+    const dataId = e.target.getAttribute("data-id");
+    const price = card.querySelector(".price");
+    const foodName = card.querySelector(".food-name");
+
+    const priceOfFood = Number(price.textContent);
+    foodPrice += priceOfFood;
+    console.log(foodPrice);
+  }
 });
