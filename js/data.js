@@ -25,8 +25,7 @@ const foodItems = [
     price: 350,
     image:
       "https://thedinnerbell.recipes/wp-content/uploads/2019/09/Garlic-Caesar-Salad-Recipe-4.jpg",
-    description:
-      "Crisp romaine lettuce with parmesan, croutons, and Caesar dressing.",
+    description: "Crisp romaine lettuce with parmesan, croutons.",
     rating: 4.0,
     reviews: 78,
   },

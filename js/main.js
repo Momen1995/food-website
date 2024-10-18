@@ -140,7 +140,7 @@ foodItems.forEach((food) => {
         <h3 class="food-name">${food.name}</h3>
         <p>${food.description}</p>
         <div class="card-content-detail">
-          <p>Price: <span class="price">${food.price}</span>TK</p>
+          <p class="card-price">Price: <span class="price">${food.price}</span>TK</p>
           <div class="rating">⭐ ${food.rating} (${food.reviews} reviews)</div>
         </div>
         <button data-id=${food.id} class="menu-btn">Order Now</button>
